@@ -1,10 +1,16 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { NavLink } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useGetGroups} from "../../api/getGroups.js";
 
 function Header({ isAuth }) {
+    function logout(){
+        localStorage.removeItem("token")
+    }
+
     return (
         <Navbar expand="md" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
             <Container>
@@ -16,8 +22,12 @@ function Header({ isAuth }) {
                     <Nav>
                         {isAuth ? (
                             <>
-                                <Nav.Link  to="/requests" className={location.pathname === '/requests' ? 'active' : ''}>Группы курсов</Nav.Link>
-                                <Nav.Link  to="/keys" className={location.pathname === '/keys' ? 'active' : ''}>Мои курсы</Nav.Link>
+                                <NavLink
+                                    to="/groups"
+                                >
+                                    Группы курсов
+                                </NavLink>
+                                <Nav.Link  to="/keys" className={location.pathname === '/keys' ? 'active' : '' } onClick={useGetGroups}>Мои курсы</Nav.Link>
                                 <Nav.Link  to="/timetable" className={location.pathname === '/timetable' ? 'active' : ''}>Преподаваемые курсы</Nav.Link>
                             </>
                         ) : null }
@@ -27,6 +37,10 @@ function Header({ isAuth }) {
                         <Nav.Link  href={isAuth ? '/profile' : '/login'}>
                             {isAuth ? 'Иванов Иван Иванович' : 'Войти'}
                         </Nav.Link>
+                        {isAuth ? (
+                            <Nav.Link href={'/login'} onClick={logout}> Выход</Nav.Link>
+                        ):null}
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>
