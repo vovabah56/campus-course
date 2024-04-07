@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api } from "../helper/instance.js";
+import { axiosInstance } from "../helper/instance.js";
 
 export const useGetApi = (defaultValue, url) => {
     const [data, setData] = useState(defaultValue);
@@ -10,7 +10,7 @@ export const useGetApi = (defaultValue, url) => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await api.get(url + params);
+                const response = await axiosInstance.get(url + params);
                 setData(response.data);
                 setLoading(false)
             } catch {

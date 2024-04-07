@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {Root} from "./components/root.jsx";
 import {ROUTES} from "./helper/router.js";
 import LoginPage from "./components/account/login/Login.jsx";
-import RegistrationPage from "./components/account/registration/RegistrationPage.jsx";
+import Registration from "./components/account/registration/RegistrationPage.jsx";
 import ProfilePage from "./components/account/profile/ProfilePage.jsx";
+import GroupsList from "./components/groups/groupsList/GroupsList.jsx";
+import {Provider} from "react-redux";
+import {store} from "./store/index.ts";
 
 
 
@@ -18,8 +20,12 @@ const router = createBrowserRouter([
                 element: <LoginPage />,
             },
             {
+                path: ROUTES.GROUPS,
+                element: <GroupsList/>
+            },
+            {
                 path: ROUTES.REGISTER,
-                element: <RegistrationPage />,
+                element: <Registration />,
             },
             {
                 path: ROUTES.PROFILE,
@@ -30,16 +36,9 @@ const router = createBrowserRouter([
 
 ]);
 
-const queryClient = new QueryClient({
-    defaultOptions: {
-        queries: {
-            refetchOnWindowFocus: false
-        }
-    }
-});
 
 export const App = () => (
-    <QueryClientProvider client={queryClient}>
+    <Provider store={store}>
         <RouterProvider router={router} />
-    </QueryClientProvider>
+    </Provider>
 );
