@@ -1,8 +1,10 @@
-import React from "react";
 import { Card, Button } from "antd";
 import { Link } from "react-router-dom";
 import { EyeOutlined } from "@ant-design/icons";
 import EditGroupButton from "../Components/EditGroupButton.jsx";
+import RequireAuthComponent from "../../RequireAuthComponent.jsx";
+import {Roles} from "../../../helper/Roles.js";
+import DeleteGroupButton from "../Components/DeleteGroupButton.jsx";
 
 const GroupCard = ({ groupInfo }) => {
     return (
@@ -21,11 +23,15 @@ const GroupCard = ({ groupInfo }) => {
                         <Button icon={<EyeOutlined />} />
                     </Link>
 
-                    <EditGroupButton groupInfo={groupInfo} />
+                    <RequireAuthComponent allowedRoles={[Roles.isAdmin]}>
+                        <EditGroupButton groupInfo={groupInfo} />
+                    </RequireAuthComponent>
 
-{/*
 
-                    <DeleteGroupButton idGroup={groupInfo.id} />*/}
+
+                    <RequireAuthComponent allowedRoles={[Roles.isAdmin]}>
+                        <DeleteGroupButton idGroup={groupInfo.id} />
+                    </RequireAuthComponent>
 
                 </div>
             </div>

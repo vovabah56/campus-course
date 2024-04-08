@@ -1,51 +1,128 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Layout, Menu } from "antd";
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {useGetGroups} from "../../api/getGroups.js";
+import { useAppDispatch, useAppSelector } from "../../store/index.ts";
+import styles from "../../style/header.module.scss";
 
-function Header({ isAuth }) {
-    function logout(){
-        localStorage.removeItem("token")
-    }
+import {Roles} from "../../helper/Roles.js";
+import {authActions} from "../account/store/authSlice.js";
+import RequireAuthComponent from "../RequireAuthComponent.jsx";
+import {logout} from "../account/store/authActions.js";
+
+const { Header: AntHeader } = Layout;
+
+const Header = () => {
+    const email = useAppSelector((state) => state.auth.email);
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        const handleLogout = () => {
+            dispatch(authActions.logout());
+        };
+
+        return () => {
+            document.removeEventListener("click", handleLogout);
+        };
+    }, [dispatch]);
 
     return (
-        <Navbar expand="md" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
-            <Container>
-                <Navbar.Brand href="/">
-                    Кампусные курсы
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav>
-                        {isAuth ? (
-                            <>
-                                <NavLink
-                                    to="/groups"
-                                >
-                                    Группы курсов
-                                </NavLink>
-                                <Nav.Link  to="/keys" className={location.pathname === '/keys' ? 'active' : '' } onClick={useGetGroups}>Мои курсы</Nav.Link>
-                                <Nav.Link  to="/timetable" className={location.pathname === '/timetable' ? 'active' : ''}>Преподаваемые курсы</Nav.Link>
-                            </>
-                        ) : null }
-                    </Nav>
+        <AntHeader className={"navbar"}>
+            <NavLink to="/" className={"logo"}>
+                Кампусные курсы
+            </NavLink>
+            <Menu theme="dark" mode="horizontal" selectable={false}>
+                <Menu.Item key="1" className={styles.linkWrapper}>
+                    <RequireAuthComponent>
+                        <NavLink
+                            to="/groups"
+                            className={({ isActive }) =>
+                                `${styles.link} ${isActive ? styles.active : ""}`
+                            }
+                        >
+                            Группы курсов
+                        </NavLink>
+                    </RequireAuthComponent>
+                </Menu.Item>
 
-                    <Nav className="ms-auto">
-                        <Nav.Link  href={isAuth ? '/profile' : '/login'}>
-                            {isAuth ? 'Иванов Иван Иванович' : 'Войти'}
-                        </Nav.Link>
-                        {isAuth ? (
-                            <Nav.Link href={'/login'} onClick={logout}> Выход</Nav.Link>
-                        ):null}
+                <Menu.Item key="2" className={styles.linkWrapper}>
+                    <RequireAuthComponent allowedRoles={[Roles.isStudent]}>
+                        <NavLink
+                            to="/courses/my"
+                            className={({ isActive }) =>
+                                `${styles.link} ${isActive ? styles.active : ""}`
+                            }
+                        >
+                            Мои курсы
+                        </NavLink>
+                    </RequireAuthComponent>
+                </Menu.Item>
 
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+                <Menu.Item key="3" className={styles.linkWrapper}>
+                    <RequireAuthComponent allowedRoles={[Roles.isTeacher]}>
+                        <NavLink
+                            to="/courses/teaching"
+                            className={({ isActive }) =>
+                                `${styles.link} ${isActive ? styles.active : ""}`
+                            }
+                        >
+                            Преподаваемые курсы
+                        </NavLink>
+                    </RequireAuthComponent>
+                </Menu.Item>
+
+                <Menu.Item key="4" className={`linkWrapper lastInLeftCol`}>
+                    <RequireAuthComponent loggedOut>
+                        <NavLink
+                            to="/register"
+                            className={({ isActive }) =>
+                                `${styles.link} ${isActive ? styles.active : ""}`
+                            }
+                        >
+                            Регистрация
+                        </NavLink>
+                    </RequireAuthComponent>
+                </Menu.Item>
+
+                <Menu.Item key="5" className={styles.linkWrapper}>
+                    <RequireAuthComponent loggedOut>
+                        <NavLink
+                            to="/login"
+                            className={({ isActive }) =>
+                                `${styles.link} ${isActive ? styles.active : ""}`
+                            }
+                        >
+                            Вход
+                        </NavLink>
+                    </RequireAuthComponent>
+                </Menu.Item>
+
+                <Menu.Item key="6" className={styles.linkWrapper}>
+                    <RequireAuthComponent>
+                        <NavLink
+                            to="/profile"
+                            className={({ isActive }) =>
+                                `${styles.link} ${isActive ? styles.active : ""}`
+                            }
+                        >
+                            {email && email}
+                        </NavLink>
+                    </RequireAuthComponent>
+                </Menu.Item>
+
+                <Menu.Item key="7" className={styles.linkWrapper}>
+                    <RequireAuthComponent>
+                        <div
+                            aria-hidden="true"
+                            onClick={() => dispatch(logout())}
+                        >
+                            Выход
+                        </div>
+                    </RequireAuthComponent>
+                </Menu.Item>
+            </Menu>
+        </AntHeader>
     );
-}
+};
 
 export default Header;

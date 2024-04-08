@@ -1,18 +1,20 @@
-import List from "../../header/List.jsx"
-import { useGetGroups } from "../../../api/getGroups.js";
-import GroupCard from "./GroupCard.jsx";
+import {useAppSelector} from "../../../store/index.ts";
 import ContentLoader from "react-content-loader";
+import List from "../../header/List.jsx";
+import CourseCard from "./CourseCard.jsx";
+import {getCourses} from "../store/groupSelectors.js";
 
-const GroupsList = () => {
-    const [groups, loading, error] =  useGetGroups();
-/*
-    const loading = useAppSelector((state) => state.loading.getData.getGroups);
-*/
+const CoursesInGroupList = () => {
+    const courses = useAppSelector(getCourses);
+    const loading = useAppSelector((state) => state.loading.getData.getCourses);
+
     return !loading ? (
         <List
-            data={groups}
-            emptyText="Нет групп"
-            renderItem={(group) => <GroupCard key={group.id} groupInfo={group} />}
+            data={courses}
+            emptyText="Нет курсов"
+            renderItem={(course) => (
+                <CourseCard key={course.id} courseInfo={course} />
+            )}
         />
     ) : (
         <>
@@ -27,10 +29,9 @@ const GroupsList = () => {
                 >
                     <rect x="0" y="6" rx="8" ry="8" width="100%" height="90%" />
                 </ContentLoader>
-
             ))}
         </>
     );
 };
 
-export default GroupsList;
+export default CoursesInGroupList;
