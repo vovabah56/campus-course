@@ -2,7 +2,6 @@ import {Form, Row} from "react-bootstrap";
 
 
 const BirthDate = (baseValue) => {
-    console.log(baseValue)
     var date;
     if(baseValue.baseValue !== undefined){
         date = baseValue ? new Date(baseValue.baseValue).toISOString().slice(0, 10):null

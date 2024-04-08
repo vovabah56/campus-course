@@ -1,12 +1,13 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import {Root} from "./components/root.jsx";
 import {ROUTES} from "./helper/router.js";
-import LoginPage from "./components/account/login/Login.jsx";
 import Registration from "./components/account/registration/RegistrationPage.jsx";
-import ProfilePage from "./components/account/profile/ProfilePage.jsx";
+import ProfileForm from "./components/account/profile/ProfileForm.jsx";
 import GroupsList from "./components/groups/groupsList/GroupsList.jsx";
 import {Provider} from "react-redux";
 import {store} from "./store/index.ts";
+import LoginPage from "./components/pages/LoginPage.jsx";
+import Profile from "./components/pages/ProfilePage.jsx";
 
 
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: ROUTES.PROFILE,
-                element: <ProfilePage />,
+                element: <Profile />,
             },
         ],
     },

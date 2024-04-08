@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {editProfile, getProfile, getRoles, getStudingCourses, getTeachingCourses} from "./accountActions.js";
+import {Roles} from "../../../helper/Roles.js";
 
 
 const initialState = {
@@ -15,10 +16,11 @@ const accountSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getRoles.fulfilled, (state, action) => {
-            state.roles = action.payload;
+            state.roles = convertRolesResponeToArray(action.payload);
         });
 
         builder.addCase(getProfile.fulfilled, (state, action) => {
+            console.log(action.payload)
             state.profile = action.payload;
         });
 
@@ -35,6 +37,18 @@ const accountSlice = createSlice({
         });
     },
 });
+
+
+function convertRolesResponeToArray(response) {
+    const roles = [];
+
+    for (const key in response) {
+        if (response[key]) {
+            roles.push(Roles[key]);
+        }
+    }
+    return roles;
+}
 
 const accountReducer = accountSlice.reducer;
 const accountActions = accountSlice.actions;

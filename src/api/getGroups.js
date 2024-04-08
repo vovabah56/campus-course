@@ -1,24 +1,23 @@
 import { useEffect, useState } from "react";
-import { api } from "../helper/instance.js";
+import { axiosInstance } from "../helper/instance.js";
 import {URL_API} from "../helper/urlApi.js";
-
+import {history} from "../helper/history.js";
 export const useGetGroups =  (defaultValue) => {
     const [data, setData] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    console.log("sadasdasdasdasdasd")
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await api.get(URL_API.GROUPS);
+                const response = await axiosInstance.get(URL_API.GROUPS);
                 setData(response.data);
-                console.log(response)
                 setLoading(false)
 
             } catch {
 /*
                 setLoading(false)
 */
+                history.navigate("/login")
                 setData(defaultValue);
 /*
                 setError(true)

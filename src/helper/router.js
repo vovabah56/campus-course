@@ -3,5 +3,7 @@ export const ROUTES = {
     LOGIN: 'login',
     REGISTER: 'register',
     PROFILE: 'profile',
+    GROUPS: 'groups',
+    GROUP: 'groups/:groupsId'
   };
   
