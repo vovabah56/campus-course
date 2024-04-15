@@ -18,7 +18,7 @@ const useBreadcrumbs = () => {
 
         return {
             key: url,
-            title: <Link to="${url}">{breadcrumbNameMap[url] ?? "Детали"}</Link>,
+            title: <Link to={url}>{breadcrumbNameMap[url] ?? "Детали"}</Link>,
         };
     });
 

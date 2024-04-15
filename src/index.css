@@ -516,3 +516,18 @@ ol {
     }
 }
 
+.Created {
+    color: #718096;
+}
+
+.OpenForAssigning {
+    color: #48bb78;
+}
+
+.Started {
+    color: #4299e1;
+}
+
+.Finished {
+    color: #e53e3e;
+}
