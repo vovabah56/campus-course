@@ -1,6 +1,6 @@
 
 import { URL_API } from "../helper/urlApi.js";
-import { api } from "../helper/instance.js"
+import { axiosInstance } from "../helper/instance.js"
 
 export const axiosEditProfile = async (event) => {
     event.preventDefault();
@@ -17,7 +17,7 @@ export const axiosEditProfile = async (event) => {
     console.log(data);
 
     try {
-        await api.put(URL_API.PROFILE_URL, data);
+        await axiosInstance.put(URL_API.PROFILE_URL, data);
         window.location.reload()
     } catch (error) {
         console.error("Error during registration:", error);
