@@ -38,6 +38,8 @@ const groupsSlice = createSlice({
         });
 
         builder.addCase(deleteGroup.fulfilled, (state, action) => {
+            console.log(action.payload)
+            console.log(state.allGroups)
             state.allGroups = state.allGroups.filter((group) => group.id !== action.payload);
         });
 

@@ -10,4 +10,16 @@ export const URL_API = {
     PROFILE: "/profile",
     STUDYING_COURSES: "/courses/my",
     TEACHING_COURSES: "/courses/teaching",
+    ALL_USERS: "/users",
+    COURSE_BY_ID: (id) => `courses/${id}`,
+    COURSE_IN_GROUP: (idGroup) => `groups/${idGroup}`,
+    DETAILS: (id) => `/courses/${id}/details`,
+    STATUS: (idCourse) => `/courses/${idCourse}/status`,
+    TEACHERS: (idCourse) => `/courses/${idCourse}/teachers`,
+    NOTIFICATIONS: (idCourse) => `/courses/${idCourse}/notifications`,
+    STUDENT_STATUS: (idCourse, idStudent) =>
+        `/courses/${idCourse}/student-status/${idStudent}`,
+    STUDENT_MARK: (idCourse, idStudent) =>
+        `/courses/${idCourse}/marks/${idStudent}`,
+    SIGN_UP: (idCourse) => `/courses/${idCourse}/sign-up`,
 }

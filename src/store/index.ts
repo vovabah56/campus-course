@@ -3,8 +3,8 @@ import {TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { authReducer } from "../components/account/store/authSlice.js";
 import { accountReducer } from "../components/account/store/accountSlice.js";
 import {loadingReducer} from "./LoadingSlice.js"
-import {groupsReducer} from "../components/groups/store/groupsSlice";
-
+import {groupsReducer} from "../components/groups/store/groupsSlice.js";
+import {usersReducer} from "../components/users/userSlice.js"
 
 import {
     AnyAction,
@@ -18,6 +18,7 @@ const combinedReducer = combineReducers({
     loading: loadingReducer,
     account: accountReducer,
     groups: groupsReducer,
+    users: usersReducer,
 });
 
 const rootReducer: Reducer = (state: RootState, action: AnyAction) => {

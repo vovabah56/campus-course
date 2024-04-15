@@ -4,6 +4,9 @@ export const ROUTES = {
     REGISTER: 'register',
     PROFILE: 'profile',
     GROUPS: 'groups',
-    GROUP: 'groups/:groupsId'
+    GROUP: 'groups/:idGroup',
+    MY_COURSES: 'courses/my',
+    TEACHING: 'courses/teaching',
+
   };
   

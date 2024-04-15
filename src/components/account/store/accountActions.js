@@ -33,7 +33,7 @@ export const getStudingCourses = createAsyncThunk(
     "account/getStudingCourses",
     async (_, { rejectWithValue }) => {
         try {
-            const response = await api.getStudingCourses();
+            const response = await api2.getStudyingCourses();
             return response.data;
         } catch (error) {
             if (error.response && error.response.data.message) {
@@ -49,7 +49,7 @@ export const getTeachingCourses = createAsyncThunk(
     "account/getTeachingCourses",
     async (_, { rejectWithValue }) => {
         try {
-            const response = await api.getTeachingCourses();
+            const response = await api2.getTeachingCourses();
             return response.data;
         } catch (error) {
             if (error.response && error.response.data.message) {

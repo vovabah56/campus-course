@@ -2,12 +2,13 @@ import List from "../../header/List.jsx"
 import { useGetGroups } from "../../../api/getGroups.js";
 import GroupCard from "./GroupCard.jsx";
 import ContentLoader from "react-content-loader";
+import {useAppSelector} from "../../../store/index.ts";
+import {getGroups} from "../store/groupSelectors.js";
 
 const GroupsList = () => {
-    const [groups, loading, error] =  useGetGroups();
-/*
+    const groups = useAppSelector(getGroups);
     const loading = useAppSelector((state) => state.loading.getData.getGroups);
-*/
+
     return !loading ? (
         <List
             data={groups}

@@ -29,6 +29,7 @@ const accountSlice = createSlice({
         });
 
         builder.addCase(getStudingCourses.fulfilled, (state, action) => {
+            console.log(action)
             state.studingCourses = action.payload;
         });
 

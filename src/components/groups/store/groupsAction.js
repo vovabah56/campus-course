@@ -4,7 +4,7 @@ import {axiosEditGroup} from "../../../api/editGroup.js";
 import {deleteGroupById} from "../../../api/deleteGroup.js";
 import * as api from "../../../api/groups.js"
 export const getGroups = createAsyncThunk("groups/getGroups", async () => {
-    const response = useGetGroups();
+    const response = await useGetGroups();
     return response.data;
 });
 
