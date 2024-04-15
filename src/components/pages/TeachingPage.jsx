@@ -1,0 +1,22 @@
+import { useEffect } from "react";
+
+import {useAppDispatch} from "../../store/index.ts";
+import DataContent from "../groups/Components/DataContent.jsx";
+import {getTeachingCourses} from "../account/store/accountActions.js";
+import TeachingList from "../courses/components/TeachingList.js";
+
+const TeachingPage = () => {
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(getTeachingCourses());
+    }, [dispatch]);
+
+    return (
+        <DataContent title="Преподаваемые курсы">
+            <TeachingList />
+        </DataContent>
+    );
+};
+
+export default TeachingPage;

@@ -1,6 +1,6 @@
 
 import { URL_API } from "../helper/urlApi.js";
-import { api } from "../helper/instance.js"
+import {axiosInstance } from "../helper/instance.js"
 
 export const axiosLogin = async (event) => {
     event.preventDefault();
@@ -14,7 +14,7 @@ export const axiosLogin = async (event) => {
     console.log(data);
 
     try {
-        const token = await api.post(URL_API.LOGIN_URL, data);
+        const token = await axiosInstance.post(URL_API.LOGIN_URL, data);
         localStorage.setItem("token", token.data.token);
         console.log(token.data.token);
         window.location.href = "/";

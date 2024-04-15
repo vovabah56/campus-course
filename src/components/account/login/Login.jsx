@@ -1,48 +1,56 @@
-import { useState } from 'react';
-import {Button,  Form, Row, Card} from 'react-bootstrap';
-import { axiosLogin } from '../../../api/login.js';
+import { useState } from "react";
+import { Button, Form, Input, message } from "antd";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
 
-import Password from "../Password.jsx";
-import Email from "../Email.jsx";
+import { history } from "../../../helper/history.js";
+import {useAppDispatch} from "../../../store/index.ts";
+import {login} from "../store/authActions.js";
+import {loginFormValidation} from "../helper/validation.js";
 
-export default function LoginPage() {
+const LoginForm = () => {
+    const [loading, setLoading] = useState(false);
+    const dispatch = useAppDispatch();
 
-    const [validated, setValidated] = useState(false);
-    const [error, setErrors] = useState('')
+    const onFinish = (values) => {
+        setLoading(true);
+        dispatch(login(values))
+            .unwrap()
+            .then(() => history.navigate && history.navigate("/"))
+            .catch((e) => {
+                onFinishFailed(e.message);
+            })
+            .finally(() => setLoading(false));
+    };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.stopPropagation();
-        } else {
-            setValidated(true);
-            const errorText = await axiosLogin(event);
-            setErrors(errorText);
-        }
+    const onFinishFailed = (value) => {
+        message.error(value);
     };
 
     return (
-        <div className="vh-100 d-flex flex-column justify-content-center align-items-center">
-            <Card className='w-75' style={{maxWidth:'33em'}}>
-                <Card.Body>
-                    <Card.Title><h2>Вход</h2></Card.Title>
-                    <h6 className="text-danger mt-3">{error}</h6>
-                    <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                        <Email></Email>
-                        <Password></Password>
-                        <div className="d-grid gap-2">
-                            <Button type='submit' variant="primary">
-                                Войти
-                            </Button>
-                            <Button href="/register" variant="secondary">
-                                Регистрация
-                            </Button>
-                        </div>
-                    </Form>
-                </Card.Body>
-            </Card>
-        </div>
+        <Form layout="vertical" autoComplete="off" onFinish={onFinish}>
+            <Form.Item label="Email" name="email" rules={loginFormValidation.email}>
+                <Input
+                    prefix={<UserOutlined className="site-form-item-icon text-gray-500" />}
+                    size="large"
+                />
+            </Form.Item>
+            <Form.Item
+                label="Пароль"
+                name="password"
+                rules={loginFormValidation.password}
+            >
+                <Input.Password
+                    prefix={<LockOutlined className="site-form-item-icon text-gray-500" />}
+                    size="large"
+                />
+            </Form.Item>
+            <Form.Item>
+                <Button type="primary" htmlType="submit" size="large" loading={loading}>
+                    Войти
+                </Button>
+            </Form.Item>
+        </Form>
     );
-}
+};
 
+export default LoginForm;
