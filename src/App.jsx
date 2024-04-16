@@ -10,6 +10,7 @@ import Profile from "./components/pages/ProfilePage.jsx";
 import Groups from "./components/groups/groupsList/index.jsx";
 import GroupPage from "./components/pages/GroupPage.jsx";
 import MyCourses from "./components/pages/MyCourses.jsx";
+import Course from "./components/pages/CoursePage.jsx";
 
 
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: ROUTES.GROUP,
                 element: <GroupPage/>
+            },
+            {
+                path: ROUTES.COURSE,
+                element: <Course/>
             },
             {
                 path: ROUTES.MY_COURSES,

@@ -7,6 +7,6 @@ export const ROUTES = {
     GROUP: 'groups/:idGroup',
     MY_COURSES: 'courses/my',
     TEACHING: 'courses/teaching',
-
+    COURSE: 'courses/:idCourse'
   };
   

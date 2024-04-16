@@ -2,14 +2,15 @@ import { Badge, Tabs } from "antd";
 
 
 import {getCourseDescription, getCourseNotifications} from "../store/courseSelectors.js";
-import {useAppSelector} from "../../../store/index.js";
+import {useAppSelector} from "../../../store/index.ts";
 import TextBlock from "./TextBlock.jsx";
 import NotificationsBlock from "./NotificationsBlock.jsx";
 
 const AdvancedCourseInfo = () => {
     const courseDescription = useAppSelector(getCourseDescription);
     const notifications = useAppSelector(getCourseNotifications);
-
+    console.log(courseDescription)
+    console.log(notifications)
     return (
         <Tabs
             defaultActiveKey="1"

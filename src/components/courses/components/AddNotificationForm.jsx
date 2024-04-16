@@ -1,4 +1,4 @@
-import {Checkbox, Form, FormInstance, Input, message} from "antd";
+import {Checkbox, Form, Input, message} from "antd";
 
 import {notificationFormValidation} from "../helper/validation.js";
 import {getCourseId} from "../store/courseSelectors.js";
@@ -15,7 +15,7 @@ const AddNotificationForm = ({  form,
     const idCourse = useAppSelector(getCourseId);
 
     const onFinish = (values) => {
-        dispatch(addNotificationToCourse({idCourse, data}))
+        dispatch(addNotificationToCourse({ idCourse, data: values }))
             .unwrap()
             .then(() => onFinishSuccess())
             .catch((e) => onFinishFailed(e.message));

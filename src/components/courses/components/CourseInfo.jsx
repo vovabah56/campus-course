@@ -24,7 +24,6 @@ const CourseInfo = () => {
 
     const { isUserCourseEditor, isUserCourseSigner } = useRoles();
 
-    console.log(isUserCourseSigner(idCourse));
 
     return (
         <>
