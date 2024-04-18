@@ -6,11 +6,27 @@ import {Button} from "antd";
 import {useAppSelector} from "../../../../../store/index.ts";
 import useModal from "../../../../../hooks/useModel.js";
 import ModalForm from "../../../../helperComponents/ModalForm.jsx";
+import useRoles from "../../../../../hooks/useRoles.js";
+import ShortCourseFormTeacher from "./EditCourseFormTeacher.jsx";
+import * as courseSelectors from "../../../store/courseSelectors.js";
 
 const EditCourseButton = () => {
     const { isOpen, form, showModal, hideModal } = useModal();
-    const loading = useAppSelector((state) => state.loading.course.edit);
+    var loading1 = useAppSelector((state) => state.loading.course.edit);
+    var loading2 = useAppSelector((state) => state.loading.course.editShort);
+    const idCourse = useAppSelector(courseSelectors.getCourseId);
+    const { isUserTeacherInCourse, isUserCourseEditor } = useRoles();
+    var finalForm;
+    var loading;
+    if(isUserTeacherInCourse(idCourse) && !isUserCourseEditor()){
+        finalForm = <ShortCourseFormTeacher/>
+        loading = loading2
 
+    }
+    else {
+        loading = loading1
+        finalForm = <EditCourseForm/>
+    }
     return (
         <>
             <Button icon={<EditOutlined />} onClick={showModal} />
@@ -22,7 +38,9 @@ const EditCourseButton = () => {
                 form={form}
                 loading={loading}
             >
-                <EditCourseForm />
+
+                {finalForm}
+
             </ModalForm>
         </>
     );

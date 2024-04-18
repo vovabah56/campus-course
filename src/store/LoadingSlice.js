@@ -22,6 +22,7 @@ const initialState = {
         create: false,
         delete: false,
         edit: false,
+        editShort:false,
         changeStatus: false,
         addTeacher: false,
         addNotification: false,
@@ -40,6 +41,9 @@ const initialState = {
 };
 
 const loadingSlice = createSlice({
+    initialState,
+    name: "loading",
+    reducers: {},
     extraReducers: (builder) => {
         builder.addMatcher(
             isAnyOf(authActions.login.pending, authActions.signup.pending),
@@ -68,6 +72,7 @@ const loadingSlice = createSlice({
                 courseActions.createCourse.pending,
                 courseActions.deleteCourse.pending,
                 courseActions.editCourse.pending,
+                courseActions.editCourseShort.pending,
                 courseActions.changeCourseStatus.pending,
                 courseActions.addTeacherToCourse.pending,
                 courseActions.addNotificationToCourse.pending,
@@ -85,6 +90,7 @@ const loadingSlice = createSlice({
                     courseActions.createCourse.fulfilled,
                     courseActions.deleteCourse.fulfilled,
                     courseActions.editCourse.fulfilled,
+                    courseActions.editCourseShort.fulfilled,
                     courseActions.changeCourseStatus.fulfilled,
                     courseActions.addTeacherToCourse.fulfilled,
                     courseActions.addNotificationToCourse.fulfilled,
@@ -102,6 +108,7 @@ const loadingSlice = createSlice({
                     courseActions.createCourse.rejected,
                     courseActions.deleteCourse.rejected,
                     courseActions.editCourse.rejected,
+                    courseActions.editCourseShort.rejected,
                     courseActions.changeCourseStatus.rejected,
                     courseActions.addTeacherToCourse.rejected,
                     courseActions.addNotificationToCourse.rejected,
@@ -217,9 +224,6 @@ const loadingSlice = createSlice({
                 }
             );
     },
-    initialState,
-    name: "loading",
-    reducers: {},
 });
 
 export const {reducer: loadingReducer, actions: loadingActions} = loadingSlice;

@@ -22,9 +22,9 @@ const CourseInfo = () => {
     const idCourse = useAppSelector(courseSelectors.getCourseId);
     const courseInfo = useAppSelector(courseSelectors.getCourseInfo);
 
-    const { isUserCourseEditor, isUserCourseSigner } = useRoles();
+    const { isUserCourseEditor, isUserCourseSigner, isUserTeacherInCourse } = useRoles();
 
-
+    console.log(isUserCourseEditor(idCourse), isUserTeacherInCourse(idCourse))
     return (
         <>
             <div className="mb-10">
@@ -35,7 +35,7 @@ const CourseInfo = () => {
                         {courseInfo.status === "OpenForAssigning" &&
                             isUserCourseSigner(idCourse) && <SignupCourseButton />}
 
-                        {isUserCourseEditor(idCourse) && (
+                        {(isUserCourseEditor(idCourse) || isUserTeacherInCourse(idCourse)) && (
                             <div className="flex gap-2">
                                 <EditCourseButton />
                                 <DeleteCourseButton />

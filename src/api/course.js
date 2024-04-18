@@ -15,6 +15,11 @@ export const editCourse = (
     data
 )=>
     axiosInstance.put(URL_API.COURSE_BY_ID(idCourse), data);
+export const editCourseShort = (
+    idCourse,
+    data
+)=>
+    axiosInstance.put(URL_API.COURSE_BY_ID_EDIT_SHORT(idCourse), data);
 
 export const getCourseDetails = (
     idCourse

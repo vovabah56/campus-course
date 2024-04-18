@@ -13,15 +13,16 @@ const useRoles = () => {
         roles.find((role) => checkedRoles?.includes(role));
 
     const isUserTeacherInCourse = (idCourse) => {
-        return teachingCourses.find((c) => c.id == idCourse);
+        console.log(!!teachingCourses.find((c) => c.id === idCourse))
+        return !!teachingCourses.find((c) => c.id === idCourse);
     };
 
     const isUserStudentInCourse = (idCourse) => {
         return studingCourses.find((c) => c.id == idCourse);
     };
 
-    const isUserCourseEditor = (idCourse) =>
-        !!isUserInRoles([Roles.isAdmin]) || !!isUserTeacherInCourse(idCourse);
+    const isUserCourseEditor = () =>
+        !!isUserInRoles([Roles.isAdmin]);
 
     const isUserCourseSigner = (idCourse) =>
         !isUserStudentInCourse(idCourse) && !isUserTeacherInCourse(idCourse);
@@ -35,6 +36,7 @@ const useRoles = () => {
         isUserCourseEditor,
         isUserCourseSigner,
         isUserCanSeeMark,
+        isUserTeacherInCourse
     };
 };
 

@@ -4,7 +4,7 @@ import * as courseSelectors from "../../../store/courseSelectors.js";
 import TextEditor from "../../../helper/TextEditor.jsx";
 import {editCourse} from "../../../store/courseActions.js";
 import {courseFormValidation, teacherFormValidation} from "../../../helper/validation.js";
-import React, {useEffect} from "react";
+import  {useEffect} from "react";
 import {getUsers} from "../../../../users/userActions.js";
 import dayjs from "dayjs";
 

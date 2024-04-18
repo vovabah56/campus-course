@@ -28,7 +28,7 @@ const coursesSlice = createSlice({
                     id,
                     ...info
                 } = payload;
-                console.log(info)
+
                 state.idCourse = id;
                 state.courseInfo = info;
                 state.courseDescription = {
@@ -56,7 +56,24 @@ const coursesSlice = createSlice({
         builder.addCase(
             CourseActions.editCourse.fulfilled,
             (state, { payload }) => {
+                state.courseInfo.semester = payload.semester
+                state.courseInfo.startYear = payload.startYear
+                state.courseInfo.maximumStudentsCount = payload.maximumStudentsCount
+                console.log(payload)
                 state.courseDescription = payload;
+                state.courseDescription.annotations = payload.annotations;
+                state.courseDescription.requirements = payload.requirements;
+                state.courseDescription.startYear = payload.startYear;
+                state.courseDescription.semester = payload.semester;
+            }
+        );
+
+        builder.addCase(
+            CourseActions.editCourseShort.fulfilled,
+            (state, {payload}) => {
+                console.log(payload)
+                state.courseDescription.annotations = payload.annotations;
+                state.courseDescription.requirements = payload.requirements
             }
         );
 
@@ -67,6 +84,7 @@ const coursesSlice = createSlice({
         builder.addCase(
             CourseActions.changeCourseStatus.fulfilled,
             (state, { payload }) => {
+                console.log(payload)
                 if (state.courseInfo) state.courseInfo.status = payload;
             }
         );

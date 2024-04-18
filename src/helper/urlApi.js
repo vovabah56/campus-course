@@ -12,6 +12,7 @@ export const URL_API = {
     TEACHING_COURSES: "/courses/teaching",
     ALL_USERS: "/users",
     COURSE_BY_ID: (id) => `courses/${id}`,
+    COURSE_BY_ID_EDIT_SHORT: (id) => `courses/${id}/requirements-and-annotations`,
     COURSE_IN_GROUP: (idGroup) => `groups/${idGroup}`,
     DETAILS: (id) => `/courses/${id}/details`,
     STATUS: (idCourse) => `/courses/${idCourse}/status`,

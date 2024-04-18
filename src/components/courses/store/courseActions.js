@@ -54,6 +54,7 @@ export const deleteCourse = createAsyncThunk(
     }
 );
 
+
 export const editCourse = createAsyncThunk(
     "courses/edit",
     async (payload, { rejectWithValue }) => {
@@ -61,6 +62,23 @@ export const editCourse = createAsyncThunk(
             console.log(payload)
              const res = await api.editCourse(payload.idCourse, payload.data);
              console.log(res)
+            return payload.data;
+        } catch (error) {
+            if (error.response && error.response.data.message) {
+                return rejectWithValue({ message: "Невозможно отредактировать" });
+            } else {
+                return rejectWithValue({ message: "Ошибка соединения" });
+            }
+        }
+    }
+);
+
+
+export const editCourseShort = createAsyncThunk(
+    "courses/editShort",
+    async (payload, { rejectWithValue }) => {
+        try {
+             await api.editCourseShort(payload.idCourse, payload.data);
             return payload.data;
         } catch (error) {
             if (error.response && error.response.data.message) {
