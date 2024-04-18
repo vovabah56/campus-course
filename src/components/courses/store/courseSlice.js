@@ -42,6 +42,7 @@ const coursesSlice = createSlice({
             }
         );
 
+
         builder.addCase(CourseActions.getCourseDetails.pending, (state) => {
             state.error = null;
         });
