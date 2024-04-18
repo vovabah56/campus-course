@@ -1,6 +1,6 @@
 import { Badge, Collapse } from "antd";
 import { Link } from "react-router-dom";
-import {courseStatusColors, CourseStatuses, Semesters} from "../../../helper/constants.js";
+import {courseStatusColors, CourseStatuses, Semesters} from "../../../../helper/constants.js";
 
 
 const { Panel } = Collapse;

@@ -1,9 +1,9 @@
 import { Form, Radio, message } from "antd";
-import {courseStatusFormValidation} from "../../helper/validation.js";
-import {changeCourseStatus} from "../../store/courseActions.js";
-import {CourseStatuses} from "../../../../helper/constants.js";
-import * as courseSelectors from "../../store/courseSelectors.js";
-import {useAppDispatch, useAppSelector} from "../../../../store/index.ts";
+import {courseStatusFormValidation} from "../../../helper/validation.js";
+import {changeCourseStatus} from "../../../store/courseActions.js";
+import {CourseStatuses} from "../../../../../helper/constants.js";
+import * as courseSelectors from "../../../store/courseSelectors.js";
+import {useAppDispatch, useAppSelector} from "../../../../../store/index.ts";
 
 const EditStatusForm = ({ form, afterFinish }) => {
     const dispatch = useAppDispatch();

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { store } from "../store/index.ts";
 import { authActions} from '../components/account/store/authSlice.js';
 import {URL_API} from "./urlApi.js";
-
+import {history} from "./history.js";
 
 const urlsSkipAuth = [URL_API.LOGOUT_URL, URL_API.REGISTER_URL];
 
@@ -38,6 +38,7 @@ axiosInstance.interceptors.response.use(
             if (isLoggedIn) {
                 store.dispatch(authActions.clearState());
             }
+            history.navigate("/login")
             error.message = 'Необходима повторная авторизация';
         }
 

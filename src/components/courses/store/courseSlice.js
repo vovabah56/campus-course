@@ -28,12 +28,11 @@ const coursesSlice = createSlice({
                     id,
                     ...info
                 } = payload;
-
+                console.log(info)
                 state.idCourse = id;
                 state.courseInfo = info;
                 state.courseDescription = {
-                    requirements,
-                    annotations,
+                    ...payload
                 };
                 state.allStudents = students;
                 state.allTeachers = teachers;

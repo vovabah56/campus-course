@@ -4,7 +4,7 @@ import {useAppSelector} from "../../../store/index.ts";
 import RequireAuthComponent from "../../helperComponents/RequireAuthComponent.jsx";
 import {Roles} from "../../../helper/Roles.js";
 import useModal from "../../../hooks/useModel.js";
-import ModalForm from "./ModeForm.jsx";
+import ModalForm from "../../helperComponents/ModalForm.jsx";
 import GroupForm from "./GroupForm.jsx";
 
 const CreateGroupButton = () => {

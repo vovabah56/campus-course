@@ -58,7 +58,9 @@ export const editCourse = createAsyncThunk(
     "courses/edit",
     async (payload, { rejectWithValue }) => {
         try {
-            await api.editCourse(payload.idCourse, payload.data);
+            console.log(payload)
+             const res = await api.editCourse(payload.idCourse, payload.data);
+             console.log(res)
             return payload.data;
         } catch (error) {
             if (error.response && error.response.data.message) {
@@ -134,6 +136,7 @@ export const changeStudentStatus = createAsyncThunk(
     "courses/changeStudentStatus",
     async (payload, { rejectWithValue }) => {
         try {
+            console.log(payload)
             await api.changeStudentStatus(
                 payload.idCourse,
                 payload.idStudent,

@@ -29,6 +29,7 @@ const useRoles = () => {
     const isUserCanSeeMark = (checkEmail, idCourse) =>
         !!isUserCourseEditor(idCourse) || email === checkEmail;
 
+
     return {
         isUserInRoles,
         isUserCourseEditor,

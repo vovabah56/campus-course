@@ -1,9 +1,9 @@
 import { Divider } from "antd";
 
 import TeacherItem from "./TeacherItem.jsx";
-import {useAppSelector} from "../../../../store/index.ts";
-import {getCourseTeachers} from "../../store/courseSelectors.js";
-import List from "../../../helperComponents/List.jsx";
+import {useAppSelector} from "../../../../../store/index.ts";
+import {getCourseTeachers} from "../../../store/courseSelectors.js";
+import List from "../../../../helperComponents/List.jsx";
 
 const TeachersList = () => {
     const teachers = useAppSelector(getCourseTeachers);

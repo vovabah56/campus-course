@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import { useAppDispatch, useAppSelector } from "../../store/index.ts";
-import styles from "../../style/header.module.scss";
 
 import {Roles} from "../../helper/Roles.js";
 import {authActions} from "../account/store/authSlice.js";
@@ -36,9 +35,7 @@ const Header = () => {
                     <RequireAuthComponent>
                         <NavLink
                             to="/groups"
-                            className={({ isActive }) =>
-                                `${styles.link} ${isActive ? styles.active : ""}`
-                            }
+
                         >
                             Группы курсов
                         </NavLink>
@@ -49,9 +46,7 @@ const Header = () => {
                     <RequireAuthComponent allowedRoles={[Roles.isStudent]}>
                         <NavLink
                             to="/courses/my"
-                            className={({ isActive }) =>
-                                `${styles.link} ${isActive ? styles.active : ""}`
-                            }
+
 
                         >
                             Мои курсы
@@ -63,9 +58,7 @@ const Header = () => {
                     <RequireAuthComponent allowedRoles={[Roles.isTeacher]}>
                         <NavLink
                             to="/courses/teaching"
-                            className={({ isActive }) =>
-                                `${styles.link} ${isActive ? styles.active : ""}`
-                            }
+
                         >
                             Преподаваемые курсы
                         </NavLink>
@@ -76,9 +69,7 @@ const Header = () => {
                     <RequireAuthComponent loggedOut>
                         <NavLink
                             to="/register"
-                            className={({ isActive }) =>
-                                `${styles.link} ${isActive ? styles.active : ""}`
-                            }
+
                         >
                             Регистрация
                         </NavLink>
@@ -89,9 +80,7 @@ const Header = () => {
                     <RequireAuthComponent loggedOut>
                         <NavLink
                             to="/login"
-                            className={({ isActive }) =>
-                                `${styles.link} ${isActive ? styles.active : ""}`
-                            }
+
                         >
                             Вход
                         </NavLink>
@@ -102,9 +91,6 @@ const Header = () => {
                     <RequireAuthComponent>
                         <NavLink
                             to="/profile"
-                            className={({ isActive }) =>
-                                `${styles.link} ${isActive ? styles.active : ""}`
-                            }
                         >
                             {email && email}
                         </NavLink>

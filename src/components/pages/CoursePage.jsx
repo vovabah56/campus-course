@@ -12,8 +12,8 @@ import * as courseSelectors from "../courses/store/courseSelectors.js";
 import * as courseActions from "../courses/store/courseActions.js";
 import ContentLoader from "react-content-loader";
 import CourseInfo from "../courses/components/CourseInfo.jsx";
-import AdvancedCourseInfo from "../courses/components/AdvancedCourseInfo.jsx";
-import CoursePeopleInfo from "../courses/components/teachingComponents/CoursePeopleInfo.jsx";
+import AdvancedCourseInfo from "../courses/components/advCourseComponents/AdvancedCourseInfo.jsx";
+import CoursePeopleInfo from "../courses/components/teachersComponents/CoursePeopleInfo.jsx";
 
 const Course = () => {
     const dispatch = useAppDispatch();

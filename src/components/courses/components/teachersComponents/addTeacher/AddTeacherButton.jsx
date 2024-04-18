@@ -1,7 +1,7 @@
 import AddTeacherForm from "./AddTeacherForm.jsx";
-import {useAppSelector} from "../../../../store/index.ts";
-import useModal from "../../../../hooks/useModel.js";
-import ModalForm from "../../../groups/Components/ModeForm.jsx";
+import {useAppSelector} from "../../../../../store/index.ts";
+import useModal from "../../../../../hooks/useModel.js";
+import ModalForm from "../../../../helperComponents/ModalForm.jsx";
 import {AppstoreAddOutlined} from "@ant-design/icons";
 import {Button} from "antd";
 

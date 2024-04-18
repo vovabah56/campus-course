@@ -1,4 +1,4 @@
-import {useResetFormOnCloseModal} from "../../../hooks/useResetForm.js";
+import {useResetFormOnCloseModal} from "../../hooks/useResetForm.js";
 import {Button, Modal} from "antd";
 import {cloneElement} from "react";
 

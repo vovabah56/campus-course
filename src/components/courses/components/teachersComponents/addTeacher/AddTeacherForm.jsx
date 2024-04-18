@@ -1,11 +1,11 @@
 import { Form,  Select, message } from "antd";
 import { useEffect } from "react";
 
-import {useAppDispatch, useAppSelector} from "../../../../store/index.ts";
-import {getUsers} from "../../../users/userActions.js";
-import {getCourseId} from "../../store/courseSelectors.js";
-import {addTeacherToCourse} from "../../store/courseActions.js";
-import {teacherFormValidation} from "../../helper/validation.js";
+import {useAppDispatch, useAppSelector} from "../../../../../store/index.ts";
+import {getUsers} from "../../../../users/userActions.js";
+import {getCourseId} from "../../../store/courseSelectors.js";
+import {addTeacherToCourse} from "../../../store/courseActions.js";
+import {teacherFormValidation} from "../../../helper/validation.js";
 
 
 const AddTeacherForm = ({ form, afterFinish }) => {

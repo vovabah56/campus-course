@@ -1,6 +1,6 @@
 import { Tabs } from "antd";
 import StudentsBlock from "../studentsComponents/StudentsBlock.jsx";
-import TeachersBlock from "./TeachersBlock.jsx";
+import TeachersBlock from "./teachers/TeachersBlock.jsx";
 
 
 const CoursePeopleInfo = () => {

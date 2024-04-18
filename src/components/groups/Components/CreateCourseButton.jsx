@@ -1,5 +1,5 @@
 import {useAppSelector} from "../../../store/index.ts";
-import ModalForm from "./ModeForm.jsx";
+import ModalForm from "../../helperComponents/ModalForm.jsx";
 import {Button} from "antd";
 import {AppstoreAddOutlined} from "@ant-design/icons";
 import CourseForm from "../../courses/components/CourseForm.jsx";

@@ -4,18 +4,17 @@ import useRoles from "../../../../hooks/useRoles.js";
 import {StudentStatuses} from "../../../../helper/constants.js";
 import {useAppSelector} from "../../../../store/index.ts";
 import {getCourseId} from "../../store/courseSelectors.js";
-import AcceptStudentButton from "./AcceptStudentButton.jsx";
+import AcceptStudentButton from "./studentRequest/AcceptStudentButton.jsx";
 import Certification from "./Certification.jsx";
-import RejectStudentButton from "./RejectStudentButton.jsx";
+import RejectStudentButton from "./studentRequest/RejectStudentButton.jsx";
 
 
 
-const StudentItem = ( studentInfo ) => {
+const StudentItem = ({ studentInfo }) => {
     const { isUserCourseEditor, isUserCanSeeMark } = useRoles();
     const idCourse = useAppSelector(getCourseId);
 
-    studentInfo = studentInfo.studentInfo
-    console.log(studentInfo)
+    console.log(studentInfo.id)
     return (
         <div className="w-full md:flex-row flex gap-5 flex-col md:items-center items-start justify-between">
             <div>

@@ -516,6 +516,17 @@ ol {
     }
 }
 
+.Accepted {
+    color: green;
+}
+
+.InQueue {
+     color: #3b82f6;
+}
+
+.Declined {
+    color: red;
+}
 .Created {
     color: #718096;
 }

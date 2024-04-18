@@ -7,8 +7,8 @@ import {CourseStatuses, Semesters} from "../../../helper/constants.js";
 import useRoles from "../../../hooks/useRoles.js";
 import DeleteCourseButton from "./basicCourseDataComponents/DeleteCourseButton.jsx";
 import SignupCourseButton from "./basicCourseDataComponents/SingupCourseButton.jsx";
-import EditStatusButton from "./basicCourseDataComponents/EditStatusButton.jsx";
-import EditCourseButton from "./basicCourseDataComponents/EditCourseButton.jsx";
+import EditStatusButton from "./basicCourseDataComponents/editStatus/EditStatusButton.jsx";
+import EditCourseButton from "./basicCourseDataComponents/editCourse/EditCourseButton.jsx";
 
 const gridFullStyle = {
     width: "100%",

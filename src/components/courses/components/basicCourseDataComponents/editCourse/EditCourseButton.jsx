@@ -3,9 +3,9 @@
 import EditCourseForm from "./EditCourseForm.jsx";
 import {EditOutlined} from "@ant-design/icons";
 import {Button} from "antd";
-import {useAppSelector} from "../../../../store/index.ts";
-import useModal from "../../../../hooks/useModel.js";
-import ModalForm from "../../../groups/Components/ModeForm.jsx";
+import {useAppSelector} from "../../../../../store/index.ts";
+import useModal from "../../../../../hooks/useModel.js";
+import ModalForm from "../../../../helperComponents/ModalForm.jsx";
 
 const EditCourseButton = () => {
     const { isOpen, form, showModal, hideModal } = useModal();

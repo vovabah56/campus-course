@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import GroupsList from "../groups/groupsList/GroupsList.jsx";
+import GroupsList from "../groups/Components/groupsList/GroupsList.jsx";
 import { getGroups } from "../groups/store/groupsAction.js";
 import {useAppDispatch} from "../../store/index.ts";
 import DataContent from "../helperComponents/DataContent.jsx";

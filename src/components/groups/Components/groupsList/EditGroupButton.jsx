@@ -1,7 +1,7 @@
 import React from "react";
 
-import ModalForm from "../Components/ModeForm.jsx";
-import useModal from "../../../hooks/useModel.js";
+import ModalForm from "../../../helperComponents/ModalForm.jsx";
+import useModal from "../../../../hooks/useModel.js";
 /*
 import { useAppSelector } from "@/store";
 */

@@ -1,8 +1,8 @@
 import { Form, Input, message } from "antd";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateGroup } from "../store/groupsAction.js";
-import { editGroupFormValidation } from "../validation.js";
+import { updateGroup } from "../../store/groupsAction.js";
+import { editGroupFormValidation } from "../../helper/validation.js";
 
 const EditGroupForm = ({ initial, form, afterFinish }) => {
     const dispatch = useDispatch();

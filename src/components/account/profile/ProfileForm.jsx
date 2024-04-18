@@ -3,7 +3,6 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import {useAppDispatch, useAppSelector} from "../../../store/index.ts";
 import {editProfile} from "../store/accountActions.js";
-import ContentLoader from "react-content-loader";
 import {profileFormValidation} from "../helper/validation.js";
 import {getProfile} from "../store/accountSelectors.js";
 

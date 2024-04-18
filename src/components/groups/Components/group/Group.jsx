@@ -1,8 +1,8 @@
-import {useAppSelector} from "../../../store/index.ts";
+import {useAppSelector} from "../../../../store/index.ts";
 import ContentLoader from "react-content-loader";
-import List from "../../helperComponents/List.jsx";
+import List from "../../../helperComponents/List.jsx";
 import CourseCard from "./CourseCard.jsx";
-import {getCourses} from "../store/groupSelectors.js";
+import {getCourses} from "../../store/groupSelectors.js";
 
 const CoursesInGroupList = () => {
     const courses = useAppSelector(getCourses);

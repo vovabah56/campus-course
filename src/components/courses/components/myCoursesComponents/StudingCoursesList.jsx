@@ -1,7 +1,7 @@
 import {useAppSelector} from "../../../../store/index.ts";
 import {getStudingCourses} from "../../../account/store/accountSelectors.js";
 import List from "../../../helperComponents/List.jsx";
-import CourseCard from "../../../groups/group/CourseCard.jsx";
+import CourseCard from "../../../groups/Components/group/CourseCard.jsx";
 import ContentLoader from "react-content-loader";
 
 const StudingCoursesList = () => {

@@ -2,7 +2,7 @@ import { Form, Input, message } from "antd";
 import React from "react";
 
 import {createGroup} from "../store/groupsAction.js";
-import {createGroupFormValidation} from "../validation.js";
+import {createGroupFormValidation} from "../helper/validation.js";
 import {useAppDispatch} from "../../../store/index.ts";
 
 const GroupForm = ({ form, afterFinish }) => {

@@ -2,8 +2,8 @@ import { useState } from "react";
 import {Popconfirm, message, Button} from "antd";
 
 import {DeleteOutlined} from "@ant-design/icons";
-import {useAppDispatch, useAppSelector} from "../../../store/index.ts";
-import {deleteGroup} from "../store/groupsAction.js";
+import {useAppDispatch, useAppSelector} from "../../../../store/index.ts";
+import {deleteGroup} from "../../store/groupsAction.js";
 
 const DeleteGroupButton = ({ idGroup }) => {
     const dispatch = useAppDispatch();
