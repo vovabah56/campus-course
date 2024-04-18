@@ -52,7 +52,6 @@ const Header = () => {
                             className={({ isActive }) =>
                                 `${styles.link} ${isActive ? styles.active : ""}`
                             }
-
                         >
                             Мои курсы
                         </NavLink>

@@ -5,6 +5,8 @@ import { accountReducer } from "../components/account/store/accountSlice.js";
 import {loadingReducer} from "./LoadingSlice.js"
 import {groupsReducer} from "../components/groups/store/groupsSlice.js";
 import {usersReducer} from "../components/users/userSlice.js"
+import {coursesReducer} from "../components/courses/store/courseSlice.js"
+
 
 import {
     AnyAction,
@@ -19,6 +21,7 @@ const combinedReducer = combineReducers({
     account: accountReducer,
     groups: groupsReducer,
     users: usersReducer,
+    courses: coursesReducer
 });
 
 const rootReducer: Reducer = (state: RootState, action: AnyAction) => {

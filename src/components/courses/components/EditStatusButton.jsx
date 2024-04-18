@@ -1,6 +1,6 @@
 import ModalForm from "../../groups/Components/ModeForm.jsx";
 
-import {useAppSelector} from "../../../store/index.js";
+import {useAppSelector} from "../../../store/index.ts";
 import useModal from "../../../hooks/useModel.js";
 import {EditOutlined} from "@ant-design/icons";
 import {Button} from "antd";
