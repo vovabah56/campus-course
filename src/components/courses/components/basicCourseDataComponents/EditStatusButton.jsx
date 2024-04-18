@@ -1,7 +1,7 @@
-import ModalForm from "../../groups/Components/ModeForm.jsx";
+import ModalForm from "../../../groups/Components/ModeForm.jsx";
 
-import {useAppSelector} from "../../../store/index.ts";
-import useModal from "../../../hooks/useModel.js";
+import {useAppSelector} from "../../../../store/index.ts";
+import useModal from "../../../../hooks/useModel.js";
 import {EditOutlined} from "@ant-design/icons";
 import {Button} from "antd";
 import EditStatusForm from "./EditStatusForm.jsx";

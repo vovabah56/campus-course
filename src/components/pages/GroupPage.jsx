@@ -11,9 +11,9 @@ import {useAppDispatch, useAppSelector} from "../../store/index.ts";
 import {getGroupError, getGroups} from "../groups/store/groupSelectors.js";
 import {getCourses} from "../groups/store/groupsAction.js";
 import * as GroupsAction from "../groups/store/groupsAction.js";
-import RequireAuthComponent from "../RequireAuthComponent.jsx";
+import RequireAuthComponent from "../helperComponents/RequireAuthComponent.jsx";
 import CoursesInGroupList from "../groups/group/Group.jsx";
-import DataContent from "../groups/Components/DataContent.jsx";
+import DataContent from "../helperComponents/DataContent.jsx";
 import CreateCourseButton from "../groups/Components/CreateCourseButton.jsx";
 
 const GroupPage = () => {

@@ -1,10 +1,10 @@
 import {Popconfirm, message, Button} from "antd";
-import {history} from "../../../helper/history.js";
-import {deleteCourse} from "../store/courseActions.js";
-import {getCourseId} from "../store/courseSelectors.js";
-import {useAppDispatch, useAppSelector} from "../../../store/index.ts";
+import {history} from "../../../../helper/history.js";
+import {deleteCourse} from "../../store/courseActions.js";
+import {getCourseId} from "../../store/courseSelectors.js";
+import {useAppDispatch, useAppSelector} from "../../../../store/index.ts";
 import {DeleteOutlined} from "@ant-design/icons";
-import usePopconfirm from "../../../hooks/usePopconfirm.js";
+import usePopconfirm from "../../../../hooks/usePopconfirm.js";
 
 const DeleteCourseButton = () => {
     const dispatch = useAppDispatch();

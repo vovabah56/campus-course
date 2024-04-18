@@ -1,9 +1,9 @@
 import { Form, message } from "antd";
-import {useAppDispatch, useAppSelector} from "../../../store/index.ts";
-import * as courseSelectors from "../store/courseSelectors.js";
-import TextEditor from "../helper/TextEditor.jsx";
-import {editCourse} from "../store/courseActions.js";
-import {courseFormValidation} from "../helper/validation.js";
+import {useAppDispatch, useAppSelector} from "../../../../store/index.ts";
+import * as courseSelectors from "../../store/courseSelectors.js";
+import TextEditor from "../../helper/TextEditor.jsx";
+import {editCourse} from "../../store/courseActions.js";
+import {courseFormValidation} from "../../helper/validation.js";
 
 const EditCourseForm = ({ form, afterFinish }) => {
     const dispatch = useAppDispatch();

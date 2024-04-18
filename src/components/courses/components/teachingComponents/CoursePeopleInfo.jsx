@@ -1,5 +1,5 @@
 import { Tabs } from "antd";
-import StudentsBlock from "./StudentsBlock.jsx";
+import StudentsBlock from "../studentsComponents/StudentsBlock.jsx";
 import TeachersBlock from "./TeachersBlock.jsx";
 
 

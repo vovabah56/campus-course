@@ -1,10 +1,10 @@
 import { useForm } from "antd/es/form/Form";
 import { useState } from "react";
 
-import ResultButton from "./ResultButton";
-import ModalForm from "../../groups/Components/ModeForm.jsx";
-import {useAppSelector} from "../../../store/index.ts";
-import {getCourseId} from "../store/courseSelectors.js";
+import ResultButton from "./ResultButton.jsx";
+import ModalForm from "../../../groups/Components/ModeForm.jsx";
+import {useAppSelector} from "../../../../store/index.ts";
+import {getCourseId} from "../../store/courseSelectors.js";
 import ResultForm from "./ResultForm.jsx";
 
 

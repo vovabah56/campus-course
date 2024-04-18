@@ -1,6 +1,5 @@
-import React from "react";
 import { Breadcrumb, Layout } from "antd";
-import useBreadcrumbs from "../../header/useBreadcrumbs.jsx";
+import useBreadcrumbs from "./useBreadcrumbs.jsx";
 
 // Подключение хука useBreadcrumbs
 // Импорт типа ContentProps из файла types

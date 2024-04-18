@@ -4,7 +4,7 @@ import { Badge, Tabs } from "antd";
 import {getCourseDescription, getCourseNotifications} from "../store/courseSelectors.js";
 import {useAppSelector} from "../../../store/index.ts";
 import TextBlock from "./TextBlock.jsx";
-import NotificationsBlock from "./NotificationsBlock.jsx";
+import NotificationsBlock from "./notificationComponents/NotificationsBlock.jsx";
 
 const AdvancedCourseInfo = () => {
     const courseDescription = useAppSelector(getCourseDescription);

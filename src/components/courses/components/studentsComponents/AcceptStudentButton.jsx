@@ -1,8 +1,8 @@
 import { Button } from "antd";
 
-import {changeStudentStatus} from "../store/courseActions.js";
-import {getCourseId} from "../store/courseSelectors.js";
-import {useAppDispatch, useAppSelector} from "../../../store/index.ts";
+import {changeStudentStatus} from "../../store/courseActions.js";
+import {getCourseId} from "../../store/courseSelectors.js";
+import {useAppDispatch, useAppSelector} from "../../../../store/index.ts";
 
 
 

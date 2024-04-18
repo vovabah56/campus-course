@@ -2,7 +2,7 @@ import { Card, Button } from "antd";
 import { Link } from "react-router-dom";
 import { EyeOutlined } from "@ant-design/icons";
 import EditGroupButton from "../Components/EditGroupButton.jsx";
-import RequireAuthComponent from "../../RequireAuthComponent.jsx";
+import RequireAuthComponent from "../../helperComponents/RequireAuthComponent.jsx";
 import {Roles} from "../../../helper/Roles.js";
 import DeleteGroupButton from "../Components/DeleteGroupButton.jsx";
 

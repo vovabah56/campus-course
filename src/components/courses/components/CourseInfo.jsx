@@ -5,10 +5,10 @@ import * as courseSelectors from "../store/courseSelectors.js";
 import {useAppSelector} from "../../../store/index.ts";
 import {CourseStatuses, Semesters} from "../../../helper/constants.js";
 import useRoles from "../../../hooks/useRoles.js";
-import DeleteCourseButton from "./DeleteCourseButton.jsx";
-import SignupCourseButton from "./SingupCourseButton.jsx";
-import EditStatusButton from "./EditStatusButton.jsx";
-import EditCourseButton from "./EditCourseButton.jsx";
+import DeleteCourseButton from "./basicCourseDataComponents/DeleteCourseButton.jsx";
+import SignupCourseButton from "./basicCourseDataComponents/SingupCourseButton.jsx";
+import EditStatusButton from "./basicCourseDataComponents/EditStatusButton.jsx";
+import EditCourseButton from "./basicCourseDataComponents/EditCourseButton.jsx";
 
 const gridFullStyle = {
     width: "100%",

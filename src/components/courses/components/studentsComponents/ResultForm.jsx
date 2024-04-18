@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Form, Radio, message } from "antd";
-import {resultFormValidation} from "../helper/validation.js";
-import {changeStudentMark} from "../store/courseActions.js";
-import {StudentMarks} from "../../../helper/constants.js";
-import {useAppDispatch} from "../../../store/index.ts";
+import {resultFormValidation} from "../../helper/validation.js";
+import {changeStudentMark} from "../../store/courseActions.js";
+import {StudentMarks} from "../../../../helper/constants.js";
+import {useAppDispatch} from "../../../../store/index.ts";
 
 const ResultForm = ({
                         idCourse,

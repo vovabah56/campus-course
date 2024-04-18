@@ -1,4 +1,4 @@
-import List from "../../header/List.jsx"
+import List from "../../helperComponents/List.jsx"
 import { useGetGroups } from "../../../api/getGroups.js";
 import GroupCard from "./GroupCard.jsx";
 import ContentLoader from "react-content-loader";

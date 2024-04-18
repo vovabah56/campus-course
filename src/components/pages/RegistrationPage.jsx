@@ -1,6 +1,5 @@
-import AuthContent from "../helper/AuthContent.jsx";
-import RegisterForm from "./RegisterForm.jsx";
-import React from "react";
+import AuthContent from "../account/helper/AuthContent.jsx";
+import RegisterForm from "../account/registration/RegisterForm.jsx";
 
 const Registration = () => {
     return (

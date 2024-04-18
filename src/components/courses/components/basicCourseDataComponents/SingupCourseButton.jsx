@@ -1,9 +1,9 @@
 import { UsergroupAddOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 
-import {useAppDispatch, useAppSelector} from "../../../store/index.ts";
-import {getCourseId} from "../store/courseSelectors.js";
-import {signUpForCourse} from "../store/courseActions.js";
+import {useAppDispatch, useAppSelector} from "../../../../store/index.ts";
+import {getCourseId} from "../../store/courseSelectors.js";
+import {signUpForCourse} from "../../store/courseActions.js";
 
 const SignupCourseButton = () => {
     const dispatch = useAppDispatch();

@@ -1,8 +1,8 @@
-import AddTeacherButton from "./AddTeacherButton";
-import TeachersList from "./TeachersList";
-import {useAppSelector} from "../../../store/index.ts";
-import useRoles from "../../../hooks/useRoles.js";
-import {getCourseId} from "../store/courseSelectors.js";
+import AddTeacherButton from "./AddTeacherButton.jsx";
+import TeachersList from "./TeachersList.jsx";
+import {useAppSelector} from "../../../../store/index.ts";
+import useRoles from "../../../../hooks/useRoles.js";
+import {getCourseId} from "../../store/courseSelectors.js";
 
 const TeachersBlock = () => {
     const { isUserCourseEditor } = useRoles();

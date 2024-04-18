@@ -1,9 +1,9 @@
 import {Checkbox, Form, Input, message} from "antd";
 
-import {notificationFormValidation} from "../helper/validation.js";
-import {getCourseId} from "../store/courseSelectors.js";
-import {useAppDispatch, useAppSelector} from "../../../store/index.ts";
-import {addNotificationToCourse} from "../store/courseActions.js";
+import {notificationFormValidation} from "../../helper/validation.js";
+import {getCourseId} from "../../store/courseSelectors.js";
+import {useAppDispatch, useAppSelector} from "../../../../store/index.ts";
+import {addNotificationToCourse} from "../../store/courseActions.js";
 
 const {TextArea} = Input;
 

@@ -1,6 +1,6 @@
 import {getTeachingCourses} from "../../account/store/accountSelectors.js";
 import {useAppSelector} from "../../../store/index.ts";
-import List from "../../header/List.jsx";
+import List from "../../helperComponents/List.jsx";
 import CourseCard from "../../groups/group/CourseCard.jsx";
 import ContentLoader from "react-content-loader";
 

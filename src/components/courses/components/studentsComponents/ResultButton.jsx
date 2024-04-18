@@ -1,5 +1,5 @@
 import { Button, Tag } from "antd";
-import {marksColors, StudentMarks} from "../../../helper/constants.js";
+import {marksColors, StudentMarks} from "../../../../helper/constants.js";
 
 
 

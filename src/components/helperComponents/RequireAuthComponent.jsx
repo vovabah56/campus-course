@@ -1,5 +1,5 @@
 import React from "react";
-import useAuth from "../hooks/useAuth.js";
+import useAuth from "../../hooks/useAuth.js";
 
 const RequireAuthComponent = ({
                                   loggedOut = false,

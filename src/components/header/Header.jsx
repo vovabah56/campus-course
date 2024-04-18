@@ -7,7 +7,7 @@ import styles from "../../style/header.module.scss";
 
 import {Roles} from "../../helper/Roles.js";
 import {authActions} from "../account/store/authSlice.js";
-import RequireAuthComponent from "../RequireAuthComponent.jsx";
+import RequireAuthComponent from "../helperComponents/RequireAuthComponent.jsx";
 import {logout} from "../account/store/authActions.js";
 
 const { Header: AntHeader } = Layout;

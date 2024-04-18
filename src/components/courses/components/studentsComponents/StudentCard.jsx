@@ -1,9 +1,9 @@
 
 
-import useRoles from "../../../hooks/useRoles.js";
-import {StudentStatuses} from "../../../helper/constants.js";
-import {useAppSelector} from "../../../store/index.ts";
-import {getCourseId} from "../store/courseSelectors.js";
+import useRoles from "../../../../hooks/useRoles.js";
+import {StudentStatuses} from "../../../../helper/constants.js";
+import {useAppSelector} from "../../../../store/index.ts";
+import {getCourseId} from "../../store/courseSelectors.js";
 import AcceptStudentButton from "./AcceptStudentButton.jsx";
 import Certification from "./Certification.jsx";
 import RejectStudentButton from "./RejectStudentButton.jsx";

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
 import {useAppDispatch} from "../../store/index.ts";
-import DataContent from "../groups/Components/DataContent.jsx";
+import DataContent from "../helperComponents/DataContent.jsx";
 import {getStudingCourses} from "../account/store/accountActions.js";
-import StudingCoursesList from "../courses/components/StudingCoursesList.jsx";
+import StudingCoursesList from "../courses/components/myCoursesComponents/StudingCoursesList.jsx";
 
 const MyCourses = () => {
     const dispatch = useAppDispatch();

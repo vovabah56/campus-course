@@ -1,7 +1,7 @@
-import NotificationItem from "./NotificationItem";
-import {getCourseNotifications} from "../store/courseSelectors.js";
-import {useAppSelector} from "../../../store/index.ts";
-import List from "../../header/List.jsx";
+import NotificationItem from "./NotificationItem.jsx";
+import {getCourseNotifications} from "../../store/courseSelectors.js";
+import {useAppSelector} from "../../../../store/index.ts";
+import List from "../../../helperComponents/List.jsx";
 
 const NotificationsList = () => {
     const notifications = useAppSelector(getCourseNotifications);

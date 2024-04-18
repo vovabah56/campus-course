@@ -1,9 +1,9 @@
 import { Divider } from "antd";
 
-import List from "../../header/List.jsx";
-import useAuth from "../../../hooks/useAuth.js";
-import {getCourseStudents} from "../store/courseSelectors.js";
-import {useAppSelector} from "../../../store/index.ts";
+import List from "../../../helperComponents/List.jsx";
+import useAuth from "../../../../hooks/useAuth.js";
+import {getCourseStudents} from "../../store/courseSelectors.js";
+import {useAppSelector} from "../../../../store/index.ts";
 import StudentItem from "./StudentCard.jsx";
 
 const StudentsBlock = () => {
