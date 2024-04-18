@@ -8,7 +8,7 @@ import {addTeacherToCourse} from "../store/courseActions.js";
 import {teacherFormValidation} from "../helper/validation.js";
 
 
-const AddTeacherForm = ( form, afterFinish ) => {
+const AddTeacherForm = ({ form, afterFinish }) => {
     const dispatch = useAppDispatch();
     const idCourse = useAppSelector(getCourseId);
     const users = useAppSelector((state) => state.users.allUsers);

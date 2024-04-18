@@ -32,7 +32,7 @@ const Header = () => {
                 Кампусные курсы
             </NavLink>
             <Menu theme="dark" mode="horizontal" selectable={false}>
-                <Menu.Item key="1" className={styles.linkWrapper}>
+                <Menu.Item key="1">
                     <RequireAuthComponent>
                         <NavLink
                             to="/groups"
@@ -45,7 +45,7 @@ const Header = () => {
                     </RequireAuthComponent>
                 </Menu.Item>
 
-                <Menu.Item key="2" className={styles.linkWrapper}>
+                <Menu.Item key="2" >
                     <RequireAuthComponent allowedRoles={[Roles.isStudent]}>
                         <NavLink
                             to="/courses/my"
@@ -59,7 +59,7 @@ const Header = () => {
                     </RequireAuthComponent>
                 </Menu.Item>
 
-                <Menu.Item key="3" className={styles.linkWrapper}>
+                <Menu.Item key="3">
                     <RequireAuthComponent allowedRoles={[Roles.isTeacher]}>
                         <NavLink
                             to="/courses/teaching"
@@ -85,7 +85,7 @@ const Header = () => {
                     </RequireAuthComponent>
                 </Menu.Item>
 
-                <Menu.Item key="5" className={styles.linkWrapper}>
+                <Menu.Item key="5" >
                     <RequireAuthComponent loggedOut>
                         <NavLink
                             to="/login"
@@ -98,7 +98,7 @@ const Header = () => {
                     </RequireAuthComponent>
                 </Menu.Item>
 
-                <Menu.Item key="6" className={styles.linkWrapper}>
+                <Menu.Item key="6" >
                     <RequireAuthComponent>
                         <NavLink
                             to="/profile"
@@ -111,7 +111,7 @@ const Header = () => {
                     </RequireAuthComponent>
                 </Menu.Item>
 
-                <Menu.Item key="7" className={styles.linkWrapper}>
+                <Menu.Item key="7" >
                     <RequireAuthComponent>
                         <div
                             aria-hidden="true"

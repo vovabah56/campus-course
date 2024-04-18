@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { FloatButton, Layout } from "antd";
+import {Button, FloatButton, Layout} from "antd";
 import { useEffect } from "react";
+import QueueAnim from "rc-queue-anim";
+
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import Header from "../components/header/Header.jsx";

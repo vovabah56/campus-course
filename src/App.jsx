@@ -11,6 +11,8 @@ import Groups from "./components/groups/groupsList/index.jsx";
 import GroupPage from "./components/pages/GroupPage.jsx";
 import MyCourses from "./components/pages/MyCourses.jsx";
 import Course from "./components/pages/CoursePage.jsx";
+import TeachingPage from "./components/pages/TeachingPage.jsx";
+import {MainPage} from "./components/pages/MainPage.jsx";
 
 
 
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
         path:  ROUTES.ROOT,
         element: <Root />,
         children: [
+            {
+                path: "",
+                element: <MainPage/>
+            },
             {
                 path: ROUTES.LOGIN,
                 element: <LoginPage />,
@@ -43,7 +49,7 @@ const router = createBrowserRouter([
             },
             {
                 path: ROUTES.TEACHING,
-                element: <MyCourses/>
+                element: <TeachingPage/>
             },
 
             {
